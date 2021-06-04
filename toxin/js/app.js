@@ -873,32 +873,32 @@ const da = new DynamicAdapt("max");
 da.init();
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');
-if (forms.length > 0) {
-	for (let index = 0; index < forms.length; index++) {
-		const el = forms[index];
-		el.addEventListener('submit', form_submit);
-	}
-}
-function form_submit(e) {
-	let btn = event.target;
-	let form = btn.closest('form');
-	let message = form.getAttribute('data-message');
-	let error = form_validate(form);
-	if (error == 0) {
-		//SendForm
-		form_clean(form);
-		if (message) {
-			popup_open('message-' + message);
-			e.preventDefault();
-		}
-	} else {
-		let form_error = form.querySelectorAll('._error');
-		if (form_error && form.classList.contains('_goto-error')) {
-			_goto(form_error[0], 1000, 50);
-		}
-		event.preventDefault();
-	}
-}
+// if (forms.length > 0) {
+// 	for (let index = 0; index < forms.length; index++) {
+// 		const el = forms[index];
+// 		el.addEventListener('submit', form_submit);
+// 	}
+// }
+// function form_submit(e) {
+// 	let btn = e.target;
+// 	let form = btn.closest('form');
+// 	let message = form.getAttribute('data-message');
+// 	let error = form_validate(form);
+// 	if (error == 0) {
+// 		//SendForm
+// 		form_clean(form);
+// 		if (message) {
+// 			popup_open('message-' + message);
+// 			e.preventDefault();
+// 		}
+// 	} else {
+// 		let form_error = form.querySelectorAll('._error');
+// 		if (form_error && form.classList.contains('_goto-error')) {
+// 			_goto(form_error[0], 1000, 50);
+// 		}
+// 		e.preventDefault();
+// 	}
+// }
 function form_validate(form) {
 	let error = 0;
 	let form_req = form.querySelectorAll('._req');
