@@ -710,6 +710,30 @@ if (toggleItems.length > 0) {
 		});
 	}
 }
+
+
+var strGET = window.location.search.replace('?', '');
+if (strGET.includes('tab=reg')) {
+	document.querySelectorAll('.logandreg__item').forEach((item) =>
+		item.classList.toggle('_active')
+	);
+}
+
+
+// document.querySelectorAll('.logandreg__btn').forEach((item) =>
+// 	item.addEventListener('click', function (e) {
+// 		e.preventDefault();
+
+// 		document.querySelectorAll('.logandreg__item').forEach(
+// 			(child) => child.classList.remove('_active')
+// 		);
+// 		item.closest('.logandreg__item').classList.add('_active');
+
+// 		console.log(item.getElementById());
+
+
+// 	})
+// );
 // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
 // e.x. data-da=".item,992,2"
