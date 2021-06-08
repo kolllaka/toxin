@@ -1,0 +1,79 @@
+// ==========================================================================================================================================================================================================================================
+.header {
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 70px;
+	background: #ffffff;
+	box-shadow: 0px 10px 20px $colorblack5;
+	// .header__content
+	&__content {
+		height: 100%;
+	}
+	// .header__menu
+	&__menu {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .header__icon
+	&__icon {
+		display: none;
+	}
+	// .header__logo
+	&__logo {
+	}
+	// .header__body
+	&__body {
+		display: flex;
+	}
+	// .header__list
+	&__list {
+		display: flex;
+		align-items: center;
+		margin: 0 20px 0 0;
+	}
+	// .header__reglist
+	&__reglist {
+		display: flex;
+		align-items: center;
+	}
+}
+.icon-menu {
+}
+.list-menu {
+	li {
+		padding: 0px 20px 0 0;
+		&:last-child {
+			padding: 0px 0px 0px 0px;
+		}
+	}
+	// .list-menu__link
+	&__link {
+		font-size: 14px;
+		line-height: 17px;
+		color: $colorblack50;
+		// .list-menu__link_b
+		&_b {
+			font-weight: 700;
+			color: $colorblack75;
+		}
+	}
+}
+.reglist-menu {
+	li {
+		padding: 0px 20px 0 0;
+		&:last-child {
+			padding: 0px 0px 0px 0px;
+		}
+	}
+	// .reglist-menu__reglink
+	&__reglink {
+	}
+}
+// ==========================================================================================================================================================================================================================================

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('_head.html',{
+"title":"Каталог",
+})
+
+<body>
+	<div class="wrapper">
+		@@include('_header.html',{})
+		<main class="catalog">
+			<div class="_container">
+				<div class="catalog__content">
+					<!-- Боковая панель с параметрами поиска-->
+					<div class="catalog__column saidbar _spollers">
+						<!-- Выбор даты -->
+						<div class="saidbar__row">
+							@@include('templates/date.html', {})
+						</div>
+						<!-- Количество гостей -->
+						<div class="saidbar__row">
+							@@include('templates/guests.html', {})
+						</div>
+						<!-- Диапозон цен -->
+						<div class="saidbar__row price">
+							<div class="price__row">
+								<div class="price__title">диапазон цены</div>
+								<div class="price__range">
+									<span id="price-start"></span> - <span id="price-end"></span>
+								</div>
+							</div>
+							<div class="price__row">
+								<div class="price-filter">
+									<div class="price-filter__slider"></div>
+								</div>
+							</div>
+							<div class="price__row">
+								<div class="price__text">Стоимость за сутки пребывания в номере</div>
+							</div>
+						</div>
+						<!-- Правила и доступность-->
+						<div class="saidbar__row rules">
+							<div class="rules__label">
+								<div class="rules__title">правила дома</div>
+							</div>
+							<div class="rules__body">
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Можно курить</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input"
+										checked="checked">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Можно с питомцами</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input"
+										checked="checked">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Можно пригласить гостей<br>(до 10 человек)</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+							</div>
+						</div>
+						<div class="saidbar__row rules">
+							<div class="rules__label">
+								<div class="rules__title">доступность</div>
+							</div>
+							<div class="rules__body">
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input">
+									<div class="checkbox__label">
+										<div class="checkbox__title checkbox__title_b">Широкий коридор</div>
+										<div class="checkbox__text">Ширина коридоров в номере не менее 91 см.</div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input">
+									<div class="checkbox__label">
+										<div class="checkbox__title checkbox__title_b">Помощник для инвалидов</div>
+										<div class="checkbox__text">На 1 этаже вас встретит специалист и
+											проводит до номера.</div>
+									</div>
+								</label>
+							</div>
+						</div>
+						<!-- Удобство номера -->
+						<div class="saidbar__row">
+							@@include('templates/comfort.html', {})
+						</div>
+						<!-- Дополнительные удобства -->
+						<div class="saidbar__row rules">
+							<div class="rules__label _spoller _arrow_b">
+								<div class="rules__title ">дополнительные удобства</div>
+							</div>
+							<div class="rules__body">
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Завтрак</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input"
+										checked="checked">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Письменный стол</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input"
+										checked="checked">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Стул для кормления</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input"
+										checked="checked">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Кроватка</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Телевизор</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+								<label class="rules__checkbox checkbox">
+									<input type="checkbox" name="form[]" data-error="Ошибка" value="1" class="checkbox__input">
+									<div class="checkbox__label">
+										<div class="checkbox__title">Шампунь</div>
+										<div class="checkbox__text"></div>
+									</div>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- Блок страницы с комнатами -->
+					<div class="catalog__column main-catalog">
+						<div class="main-catalog__title">Номера, которые мы для вас подобрали</div>
+						<div class="main-catalog__items">
+							<!-- комната 1 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/01/01.jpg",
+								"path2": "img/catalog/01/02.jpg",
+								"path3": "img/catalog/01/03.jpg",
+								"path4": "img/catalog/01/04.jpg",
+								"lux":"люкс",
+								"number": "888",
+								"cost":"9 990₽",
+								"rate": "5",
+								"count": "145",
+								})
+							</div>
+							<!-- комната 2 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/02/01.jpg",
+								"path2": "img/catalog/02/02.jpg",
+								"path3": "img/catalog/02/03.jpg",
+								"path4": "img/catalog/02/04.jpg",
+								"lux":"",
+								"number": "840",
+								"cost": "9 990₽",
+								"rate": "4",
+								"count": "65",
+								})
+							</div>
+							<!-- комната 3 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/03/01.jpg",
+								"path2": "img/catalog/03/02.jpg",
+								"path3": "img/catalog/03/03.jpg",
+								"path4": "img/catalog/03/04.jpg",
+								"lux":"люкс",
+								"number": "980",
+								"cost":"8 500₽",
+								"rate": "3",
+								"count": "35",
+								})
+							</div>
+							<!-- комната 4 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/04/01.jpg",
+								"path2": "img/catalog/04/02.jpg",
+								"path3": "img/catalog/04/03.jpg",
+								"path4": "img/catalog/04/04.jpg",
+								"lux":"",
+								"number": "856",
+								"cost":"7 300₽",
+								"rate": "5",
+								"count": "19",
+								})
+							</div>
+							<!-- комната 5 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/05/01.jpg",
+								"path2": "img/catalog/05/02.jpg",
+								"path3": "img/catalog/05/03.jpg",
+								"path4": "img/catalog/05/04.jpg",
+								"lux":"",
+								"number": "740",
+								"cost":"6 000₽",
+								"rate": "4",
+								"count": "44",
+								})
+							</div>
+							<!-- комната 6 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/06/01.jpg",
+								"path2": "img/catalog/06/02.jpg",
+								"path3": "img/catalog/06/03.jpg",
+								"path4": "img/catalog/06/04.jpg",
+								"lux":"",
+								"number": "982",
+								"cost":"5 800₽",
+								"rate": "3",
+								"count": "56",
+								})
+							</div>
+							<!-- комната 7 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/07/01.jpg",
+								"path2": "img/catalog/07/02.jpg",
+								"path3": "img/catalog/07/03.jpg",
+								"path4": "img/catalog/07/04.jpg",
+								"lux":"",
+								"number": "678",
+								"cost":"5 500₽",
+								"rate": "5",
+								"count": "45",
+								})
+							</div>
+							<!-- комната 8 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/08/01.jpg",
+								"path2": "img/catalog/08/02.jpg",
+								"path3": "img/catalog/08/03.jpg",
+								"path4": "img/catalog/08/04.jpg",
+								"lux":"",
+								"number": "450",
+								"cost":"5 300₽",
+								"rate": "4",
+								"count": "39",
+								})
+							</div>
+							<!-- комната 9 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/09/01.jpg",
+								"path2": "img/catalog/09/02.jpg",
+								"path3": "img/catalog/09/03.jpg",
+								"path4": "img/catalog/09/04.jpg",
+								"lux":"люкс",
+								"number": "350",
+								"cost":"5 000₽",
+								"rate": "3",
+								"count": "77",
+								})
+							</div>
+							<!-- комната 10 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/10/01.jpg",
+								"path2": "img/catalog/10/02.jpg",
+								"path3": "img/catalog/10/03.jpg",
+								"path4": "img/catalog/10/04.jpg",
+								"lux":"",
+								"number": "666",
+								"cost":"5 000₽",
+								"rate": "5",
+								"count": "25",
+								})
+							</div>
+							<!-- комната 11 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/11/01.jpg",
+								"path2": "img/catalog/11/02.jpg",
+								"path3": "img/catalog/11/03.jpg",
+								"path4": "img/catalog/11/04.jpg",
+								"lux":"",
+								"number": "444",
+								"cost":"5 000₽",
+								"rate": "3",
+								"count": "15",
+								})
+							</div>
+							<!-- комната 12 -->
+							<div class="main-catalog__item">
+								@@include('_item.html', {
+								"redirect": "room.html",
+								"path1": "img/catalog/12/01.jpg",
+								"path2": "img/catalog/12/02.jpg",
+								"path3": "img/catalog/12/03.jpg",
+								"path4": "img/catalog/12/04.jpg",
+								"lux":"",
+								"number": "352",
+								"cost":"5 000₽",
+								"rate": "3",
+								"count": "55",
+								})
+							</div>
+						</div>
+						<div class="main-catalog__pagging pagging">
+							<div class="pagging__top">
+								<a href="#" class="pagging__arrow"></a>
+								<ul class="pagging__list">
+									<li><a href="#" class="pagging__link _active">1</a></li>
+									<li><a href="#" class="pagging__link">2</a></li>
+									<li><a href="#" class="pagging__link">3</a></li>
+									<li><a href="#" class="pagging__link">...</a></li>
+									<li><a href="#" class="pagging__link">15</a></li>
+								</ul>
+								<a href="#" class="pagging__arrow"></a>
+							</div>
+							<div class="pagging__text">1 – 12 из 100+ вариантов аренды</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('_footer.html',{})
+	</div>
+	@@include('_popup.html',{})
+	@@include('_js.html',{})
+</body>
+
+</html>

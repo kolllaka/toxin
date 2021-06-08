@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('_head.html',{
+"title":"Вход и регистрация",
+})
+
+<body>
+	<div class="wrapper">
+		@@include('_header.html',{})
+		<main class="mainpage">
+			<div class="mainpage__bg _ibg">
+				<img src="img/bg/login/logbg.jpg" alt="">
+			</div>
+			<div class="_container">
+				<div class="mainpage__content content-loginpage">
+					<div class="content-loginpage__login logandreg">
+						<div class="logandreg__body">
+							<!-- Форма регистрации -->
+							<form action="#" id="reg" class="logandreg__item item-reg">
+								<div class="item-reg__row titlecenter titletext">
+									<h1>Регистрация аккаунта</h1>
+								</div>
+								<div class="item-reg__row">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="Имя">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="Фамилия">
+									<div class="item-reg__opt radio">
+										<input type="radio" name="1" id="male" checked="checked">
+										<label for="male"><span>Мужчина</span></label>
+										<input type="radio" name="1" id="famale">
+										<label for="famale"><span>Женщина</span></label>
+									</div>
+								</div>
+								<div class="item-reg__row">
+									<div class="item-reg__subtitle">дата рождения</div>
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="ДД.ММ.ГГГГ">
+								</div>
+								<div class="item-reg__row">
+									<div class="item-reg__subtitle">данные для входа в сервис</div>
+									<input autocomplete="off" type="email" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="Email">
+									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="Пароль">
+									<div class="item-reg__opt checkbox">
+										<input type="checkbox" name="" id="special">
+										<label for="special"><span>Получать спецпредложения</span></label>
+									</div>
+								</div>
+								<div class="item-reg__row">
+									<button form="reg" type="submit"
+										class="item-reg__btn btn _arrow_r text text_h3"><span>зарегистрироваться</span></button>
+								</div>
+							</form>
+							<div class="logandreg__item">
+								<div class="logandreg__tab">
+									<div class="logandreg__text text">Уже есть аккаунт на Toxin</div>
+									<div class="logandreg__btn btn btn_tr text text_h3"><span>войти</span></div>
+								</div>
+							</div>
+							<!-- Форма sign in -->
+							<form action="#" id="sign-in" class="logandreg__item item-reg _active">
+								<div class="item-reg__row titletext">
+									<h1>Войти</h1>
+								</div>
+								<div class="item-reg__row">
+									<div class="item-reg__subtitle"></div>
+									<input autocomplete="off" type="email" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="Email">
+									<input autocomplete="off" type="password" name="form[]" data-error="Ошибка" data-value=""
+										class="input" placeholder="Пароль">
+								</div>
+								<div class="item-reg__row">
+									<button form="sign-in" type="submit"
+										class="item-reg__btn btn _arrow_r text text_h3"><span>войти</span></button>
+								</div>
+							</form>
+							<div class="logandreg__item _active">
+								<div class="logandreg__tab">
+									<div class="logandreg__text text">Нет аккаунта на Toxin?</div>
+									<div class="logandreg__btn btn btn_tr text text_h3"><span>создать</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('_footer.html',{})
+	</div>
+	@@include('_popup.html',{})
+	@@include('_js.html',{})
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+.pagging {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// .pagging__arrow
+	&__arrow {
+		width: 33px;
+		height: 30px;
+		cursor: pointer;
+		background: url("../img/icons/arrow.svg") 0 0 no-repeat;
+		@media (min-width: $md2+px) {
+			&:hover {
+				background-color: #f68038;
+			}
+		}
+		&:first-child {
+			transform: rotate(-180deg);
+		}
+		&:last-child {
+		}
+	}
+	// .pagging__list
+	&__list {
+		margin: 0px 35px;
+		display: flex;
+		li {
+		}
+	}
+	// .pagging__item
+	&__item {
+		width: 33px;
+		height: 33px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		color: #333333;
+		font-weight: 900;
+		&._active {
+			color: #fff;
+			background-color: #fd8424;
+		}
+	}
+}
