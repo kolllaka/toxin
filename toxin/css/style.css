@@ -2934,10 +2934,6 @@ body.ie ._ibg img {
 
 .rate-body__rate {
   margin: 0px 30px 0px 0px;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  background-color: red;
 }
 
 .rate-body__item {
@@ -2988,6 +2984,42 @@ body.ie ._ibg img {
   background: -webkit-gradient(linear, left top, left bottom, from(#919191), to(#3d4975));
   background: -o-linear-gradient(top, #919191 0%, #3d4975 100%);
   background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+}
+
+.canvas-rate {
+  height: 120px;
+  width: 120px;
+  position: relative;
+}
+
+.canvas-rate__img {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-rate__desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 2vw;
+  font-weight: 700;
+  color: #bc9cff;
+  display: inline-block;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  color: #bc9cff;
+  text-transform: uppercase;
+}
+
+.canvas-rate__desc span {
+  font-size: 24px;
+  line-height: 29px;
 }
 
 .review-body__item {
