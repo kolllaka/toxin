@@ -91,7 +91,8 @@ a {
 // </Подключение файлов UI стилей, форм и готовых классов>===================================================================================================================================
 
 // <Подключение файлов стилей страниц и элементов>===================================================================================================================================
-//@import "datepicker";
+@import "datepickerOrigin";
+@import "datepicker";
 //@import "lightgallery";
 //@import "pagging";
 @import "popup";
@@ -188,57 +189,6 @@ a {
 }
 .btn {
 }
-
-// ==========================================================================================================================================================================================================================================
-.datepicker {
-	display: none;
-	// .datepicker__body
-	&__body {
-		overflow: hidden;
-		width: 100%;
-		background: #ffffff;
-		border: 1px solid rgba(0, 0, 0, 0.12);
-		box-sizing: border-box;
-		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-		border-radius: 4px;
-		padding: 20px;
-	}
-	// .datepicker__label
-	&__label {
-		display: flex;
-		justify-content: space-between;
-		margin: 0px 0px 30px 0px;
-	}
-	// .datepicker__arrow
-	&__arrow {
-		height: 24px;
-		width: 24px;
-		background: url("../img/icons/arrow_r.svg") center no-repeat;
-		// .datepicker__arrow_l
-		&_l {
-			transform: rotate(180deg);
-		}
-		// .datepicker__arrow_r
-		&_r {
-		}
-	}
-	// .datepicker__title
-	&__title {
-		font-weight: 700;
-		font-size: 19px;
-		line-height: 23px;
-	}
-	// .datepicker__slider
-	&__slider {
-		margin: 0px 0px 20px 0px;
-		height: 240px;
-	}
-	// .datepicker__buttons
-	&__buttons {
-	}
-}
-// ==========================================================================================================================================================================================================================================
-
 // </Основной блок>===================================================================================================================================
 .buttons {
 	display: flex;
