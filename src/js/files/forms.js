@@ -433,7 +433,7 @@ const termList = new Map([
 // Подстановка окончаний в зависимочти от количества
 function setValueToSelect(quantityButton) {
 	let select = quantityButton.closest('.select');
-	let selectNameAll = select.querySelectorAll('.select__row');
+	let selectNameAll = select.querySelectorAll('.guests-select__row');
 	let toSelect = select.querySelector('.select__select');
 	let input = '';
 	let guestvalue = 0;
@@ -441,7 +441,7 @@ function setValueToSelect(quantityButton) {
 
 	for (let index = 0; index < selectNameAll.length; index++) {
 		let selectName = selectNameAll[index];
-		let name = selectName.querySelector('.select__subtitle').textContent;
+		let name = selectName.querySelector('.guests-select__subtitle').textContent;
 		let value = parseInt(selectName.querySelector('input').value);
 
 
@@ -473,13 +473,13 @@ function setValueToSelect(quantityButton) {
 };
 function setValueToSelect2(quantityButton) {
 	let select = quantityButton.closest('.select');
-	let selectNameAll = select.querySelectorAll('.select__row');
+	let selectNameAll = select.querySelectorAll('.guests-select__row');
 	let toSelect = select.querySelector('.select__select');
 	let selectList = new Map();
 
 	for (let index = 0; index < selectNameAll.length; index++) {
 		let selectName = selectNameAll[index];
-		let name = selectName.querySelector('.select__subtitle').textContent;
+		let name = selectName.querySelector('.guests-select__subtitle').textContent;
 		let value = parseInt(selectName.querySelector('input').value);
 		selectList.set(name, value);
 	}

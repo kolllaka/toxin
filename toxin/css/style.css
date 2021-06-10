@@ -696,6 +696,8 @@ textarea.input {
   margin: 5px 0px 0px 0px;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 4px;
+  padding: 20px;
+  background: #ffffff;
 }
 
 .select__body._active {
@@ -1822,6 +1824,7 @@ body.ie ._ibg img {
 
 .datepicker {
   width: 100%;
+  border: 0;
 }
 
 .header {
