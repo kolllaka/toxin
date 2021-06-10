@@ -217,7 +217,9 @@ textarea {
 	&[type="date"]::placeholder {
 		color: green;
 	}
+	&:hover,
 	&._focus {
+		border: 1px solid $colorblack50;
 	}
 	&._error {
 		border: 1px solid red;

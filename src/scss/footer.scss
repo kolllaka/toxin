@@ -82,18 +82,15 @@
 
 .form-footer {
 	display: flex;
+	position: relative;
 	background: #ffffff;
-	border: 1px solid $colorblack10;
-	box-sizing: border-box;
-	border-radius: 4px;
 	// .form-footer__input
 	&__input {
 		flex: 1 1 auto;
 		font-size: 14px;
 		line-height: 24px;
 		color: rgba($colorblack100, 0.125);
-		padding: 0 14px;
-		border: 0;
+		padding: 0 58px 0 14px;
 		&::placeholder {
 			font-size: 14px;
 			line-height: 24px;
@@ -102,14 +99,16 @@
 	}
 	// .form-footer__btnarrow
 	&__btnarrow {
+		position: absolute;
+		right: 0;
 		flex: 0 0 44px;
 		height: 44px;
 		width: 44px;
 		background: url("../img/icons/arrow_r.svg") center no-repeat;
-		&:hover{
+		&:hover {
 			opacity: 0.8;
 		}
-		&:active{
+		&:active {
 			opacity: 0.4;
 		}
 	}
