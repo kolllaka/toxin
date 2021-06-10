@@ -107,6 +107,9 @@
 		background: url("../img/icons/arrow_r.svg") center no-repeat;
 		&:hover {
 			opacity: 0.8;
+			&~.form-footer__input{
+				border: 1px solid $colorblack50;
+			}
 		}
 		&:active {
 			opacity: 0.4;
