@@ -798,25 +798,9 @@ if (toggleItems.length > 0) {
 		});
 	}
 }
+// Datepicker ==========================================================================================================================================================================================================================================
+// var datepicker = document.querySelector('.itsdatepicker').datepicker({ inline: true });
 
-
-
-
-
-// document.querySelectorAll('.logandreg__btn').forEach((item) =>
-// 	item.addEventListener('click', function (e) {
-// 		e.preventDefault();
-
-// 		document.querySelectorAll('.logandreg__item').forEach(
-// 			(child) => child.classList.remove('_active')
-// 		);
-// 		item.closest('.logandreg__item').classList.add('_active');
-
-// 		console.log(item.getElementById());
-
-
-// 	})
-// );
 // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
 // e.x. data-da=".item,992,2"

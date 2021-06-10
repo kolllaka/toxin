@@ -167,22 +167,5 @@ if (toggleItems.length > 0) {
 		});
 	}
 }
-
-
-
-
-
-// document.querySelectorAll('.logandreg__btn').forEach((item) =>
-// 	item.addEventListener('click', function (e) {
-// 		e.preventDefault();
-
-// 		document.querySelectorAll('.logandreg__item').forEach(
-// 			(child) => child.classList.remove('_active')
-// 		);
-// 		item.closest('.logandreg__item').classList.add('_active');
-
-// 		console.log(item.getElementById());
-
-
-// 	})
-// );
+// Datepicker ==========================================================================================================================================================================================================================================
+// var datepicker = document.querySelector('.itsdatepicker').datepicker({ inline: true });

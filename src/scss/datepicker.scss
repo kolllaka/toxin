@@ -2,3 +2,98 @@
 	width: 100%;
 	border: 0;
 }
+
+.datepicker--cell {
+	height: 40px;
+}
+.datepicker--content {
+	padding: 0;
+	box-sizing: border-box;
+}
+.-selected- {
+	position: relative;
+	color: #ffffff !important;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+
+	background: none !important;
+	&::after {
+		z-index: -2;
+		content: "";
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		background: $gradient;
+		border-radius: 50%;
+	}
+}
+
+.datepicker--cell.-range-from- {
+	position: relative;
+	border-radius: 0;
+	box-sizing: border-box;
+	&::before {
+		z-index: -2;
+		content: "";
+		position: absolute;
+		right: 0;
+		height: 100%;
+		width: 50%;
+		background: $gradient;
+		opacity: 0.25;
+		box-sizing: border-box;
+	}
+}
+.datepicker--cell.-range-to- {
+	position: relative;
+	border-radius: 0;
+	box-sizing: border-box;
+	&::before {
+		z-index: -2;
+		content: "";
+		position: absolute;
+		left: 0;
+		height: 100%;
+		width: 50%;
+		background: $gradient;
+		opacity: 0.25;
+		box-sizing: border-box;
+	}
+}
+
+.datepicker--cell.-in-range- {
+	position: relative;
+	background: none !important;
+	border-radius: 0;
+	box-sizing: border-box;
+	&::before {
+		z-index: -2;
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: $gradient;
+		opacity: 0.25;
+		box-sizing: border-box;
+	}
+}
+.datepicker--cell.-focus- {
+	box-sizing: border-box;
+}
+.-current- {
+	position: relative;
+	color: #ffffff !important;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	&::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		background: $gradientgreen;
+		border-radius: 50%;
+	}
+}
