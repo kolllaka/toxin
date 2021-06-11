@@ -54,6 +54,10 @@
 			}
 		}
 	}
+	&_prev {
+	}
+	&_next {
+	}
 }
 
 ._spoller {
@@ -218,6 +222,21 @@
 	}
 	// .guests-select__button
 	&__btn {
+		padding: 0 15px;
+	}
+}
+
+.datepicker {
+	// .datepicker__buttons
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 -15px;
+	}
+	// .datepicker__button
+	&__button {
+		margin-top: 20px;
 		padding: 0 15px;
 	}
 }

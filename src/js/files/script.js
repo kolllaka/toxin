@@ -168,4 +168,113 @@ if (toggleItems.length > 0) {
 	}
 }
 // Datepicker ==========================================================================================================================================================================================================================================
-// var datepicker = document.querySelector('.itsdatepicker').datepicker({ inline: true });
+$('#itsdatepicker').datepicker({
+	inline: true,
+	toggleSelected: false,
+	range: true,
+	nextHtml: '<div class="_arrow_next"></div>',
+	prevHtml: '<div class="_arrow_prev"></div>',
+	multipleDatesSeparator: " - ",
+	//todayButton: true,
+	//dateFormat: "dd.mm.yyyy",
+	onSelect: function (dateFormat, date, picker) {
+		// Ничего не делаем если выделение было снято
+		if (!date) return;
+
+		let str = dateFormat.split(picker.opts.multipleDatesSeparator);
+		const inputDate = picker.el.closest('.select').querySelectorAll('.select__select');
+
+		if (inputDate.length > 1) {
+			inputDate.forEach((el, index) => el.value = str[index] || el.getAttribute("placeholder"));
+		} else {
+			inputDate[0].value = dateFormat;
+		}
+	}
+});
+
+const datepicker = $('#itsdatepicker').datepicker().data('datepicker');
+const clearDateButton = document.querySelector('.datepicker__button[type="reset"]');
+const inputDate = datepicker.el.closest('.select').querySelectorAll('input');
+
+if (clearDateButton) {
+	clearDateButton.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		inputDate.forEach((input) => input.value = '');
+		datepicker.clear();
+	});
+}
+
+if (inputDate.length > 0) {
+	let dateMassive = [];
+	inputDate.forEach((input, index) => {
+		//let dateInInput = input.value;
+		//console.log(dateInInput);
+
+		input.addEventListener('change', () => {
+			// console.log('dateMassiveInit:', dateMassive);
+			// console.log('in ', index);
+
+
+
+			// console.log("date", index, ":", input.value);
+			let inputVal = forDateformat(input.value);
+			// console.log(inputVal);
+
+			if (isValidDate(inputVal)) {
+				if (isValidDate(dateMassive[0])) {
+					// console.log('start date valid');
+
+					if (inputVal > dateMassive[0]) {
+						// console.log('input > start date');
+						dateMassive[1] = inputVal;
+					} else {
+						// console.log('input < start date');
+						dateMassive[1] = dateMassive[0];
+						dateMassive[0] = inputVal;
+					}
+				} else {
+					// console.log('start date no valid');
+					dateMassive[0] = inputVal;
+				}
+
+				// console.log("start: ", dateMassive[0]);
+				// console.log("end: ", dateMassive[1]);
+				inputVal[0] = dateMassive[0];
+				inputVal[1] = dateMassive[1];
+				// console.log("inputVal", inputVal[0], inputVal[1]);
+
+				datepicker.selectDate(inputVal);
+
+			}
+		});
+	});
+}
+function forDateformat(value) {
+	let valueDateMas = value.split('.');
+
+	return new Date(valueDateMas[2], valueDateMas[1] - 1, valueDateMas[0]);
+}
+
+function isValidDate(d) {
+	return d instanceof Date && !isNaN(d);
+}
+// custom mask на inputs ==========================================================================================================================================================================================================================================
+document.addEventListener('DOMContentLoaded', () => {
+	const elements = document.querySelectorAll('[data-mask="date"]')
+	const maskOptions = {
+		mask: Date,
+		lazy: false,
+		overwrite: true,
+		autofix: true,
+		blocks: {
+			d: { mask: IMask.MaskedRange, placeholderChar: 'Д', from: 1, to: 31, maxLength: 2 },
+			m: { mask: IMask.MaskedRange, placeholderChar: 'М', from: 1, to: 12, maxLength: 2 },
+			Y: { mask: IMask.MaskedRange, placeholderChar: 'Г', from: 1900, to: 2999, maxLength: 4 }
+		}
+	}
+	if (!elements) return
+	elements.forEach((element) => {
+		let mask = new IMask(element, maskOptions);
+	});
+});
