@@ -39,6 +39,7 @@ function form_validate(form) {
 	}
 	return error;
 }
+
 function form_validate_input(input) {
 	let error = 0;
 	let input_g_value = input.getAttribute('data-value');
@@ -422,13 +423,7 @@ if (quantityButtons.length > 0) {
 	}
 }
 
-const termList = new Map([
-	["гость", ["гость", "гостя", "гостей"]],
-	["младенцы", ["младенец", "младенца", "младенцев"]],
-	["спальни", ["спальня", "спальни", "спален"]],
-	["кровати", ["кровать", "кровати", "кроватей"]],
-	["ванные комнаты", ["ванная комната", "ванные комнаты", "ванных комнат"]],
-]);
+
 
 // Подстановка окончаний в зависимочти от количества
 function setValueToSelect(quantityButton) {
@@ -443,7 +438,6 @@ function setValueToSelect(quantityButton) {
 		let selectName = selectNameAll[index];
 		let name = selectName.querySelector('.guests-select__subtitle').textContent;
 		let value = parseInt(selectName.querySelector('input').value);
-
 
 		if (value > 0) {
 			if ((name == 'взрослые') || (name == 'дети')) {
@@ -516,7 +510,13 @@ function upadateSelect(map) {
 	}
 	return mapUpdate;
 }
-
+const termList = new Map([
+	["гость", ["гость", "гостя", "гостей"]],
+	["младенцы", ["младенец", "младенца", "младенцев"]],
+	["спальни", ["спальня", "спальни", "спален"]],
+	["кровати", ["кровать", "кровати", "кроватей"]],
+	["ванные комнаты", ["ванная комната", "ванные комнаты", "ванных комнат"]],
+]);
 function termOfNum(number, word) {
 	if (termList.has(word)) {
 		let titles = termList.get(word);
